@@ -12,7 +12,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ['user_details', 'phone', 'gender', ]
+        fields = ['user_details', 'phone', 'gender', 'image']
 
     def get_user_details(self, obj):
         """Returns details of the associated user."""

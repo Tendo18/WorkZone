@@ -9,19 +9,19 @@ class EmployerSerializer(serializers.ModelSerializer):
         field = '__all__'
 
 #APPLICANT SERIALIZERS
-class ApplicantsSerializers(serializers.ModelSerializer):
+class ApplicantsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Applicants
         field = '__all__'
 
 #JOB SERIALIZERS
-class JobsSerializers(serializers.ModelSerializer):
+class JobsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Jobs
         field = '__all__'
 
 #APPLICATION SERIALIZERS
-class ApplicationSerializers(serializers.ModelSerializers):
+class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         field = '__all__'

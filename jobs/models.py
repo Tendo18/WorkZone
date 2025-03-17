@@ -7,6 +7,8 @@ class Employer(models.Model):
     name = models.CharField(max_length=50)
     user = models.OneToOneField(User,on_delete=models.CASCADE )
     description = models.TextField()
+    phone = models.CharField(max_length=20)
+    company = models.CharField(max_length = 255)
     image = models.ImageField(upload_to='Employer', null= True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -18,6 +20,7 @@ class Applicants(models.Model):
     name = models.CharField(max_length=50)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.TextField()
+    phone_no = models.CharField(max_length=20)
     image = models.ImageField(upload_to='Employee', null= True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
