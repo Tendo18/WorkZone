@@ -1,27 +1,21 @@
 from rest_framework import serializers
-from .models import *
-from django.contrib.auth.models import User
+from .models import Job,Resume,JobApplication,JobSearch, JobBookmark
+from django.core.validators import FileExtensionValidator
 
-#EMPLOYER SERIALIZERS
-class EmployerSerializer(serializers.ModelSerializer):
+class JobSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Employer
-        field = '__all__'
+        model = Job
+        fields = "__all__"
+        
+class ResumeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Resume
+        fields = "__all__"
+        validators =FileExtensionValidator[(allowed_extensions = ['pdf', 'jpeg', 'png'])]
+                      
+class JobApplicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =JobApplication
+        fields = "__all__"
+        
 
-#APPLICANT SERIALIZERS
-class ApplicantsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Applicants
-        field = '__all__'
-
-#JOB SERIALIZERS
-class JobsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Jobs
-        field = '__all__'
-
-#APPLICATION SERIALIZERS
-class ApplicationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Application
-        field = '__all__'
